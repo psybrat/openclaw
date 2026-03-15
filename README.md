@@ -32,6 +32,10 @@ openclaw-bundle/
 
 Скопировать `openclaw-bundle.tar.gz` на целевую машину любым доступным способом (USB, SCP через промежуточный хост и т.д.).
 
+```bash
+curl -fsSL https://github.com/psybrat/openclaw/releases/download/v1.0.0/openclaw-bundle.tar.gz -O
+```
+
 ### 2. Распаковать
 
 ```bash
