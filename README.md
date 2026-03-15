@@ -40,26 +40,8 @@ tar xzf openclaw-bundle.tar.gz
 cd openclaw-bundle
 ```
 
-### 3. Настроить pnpm
 
-```bash
-pnpm setup
-source ~/.bashrc
-```
-
-Если `pnpm setup` не срабатывает, задайте путь вручную:
-
-```bash
-export PNPM_HOME="$HOME/.local/share/pnpm"
-mkdir -p "$PNPM_HOME"
-export PATH="$PNPM_HOME:$PATH"
-
-# Сохранить в профиль
-echo 'export PNPM_HOME="$HOME/.local/share/pnpm"' >> ~/.bashrc
-echo 'export PATH="$PNPM_HOME:$PATH"' >> ~/.bashrc
-```
-
-### 4. Установить зависимости в offline-режиме
+### 3. Установить зависимости в offline-режиме
 
 ```bash
 cd openclaw
@@ -74,14 +56,14 @@ pnpm install --offline --ignore-scripts
 
 > **Зачем `--ignore-scripts`?** Пакет `node-llama-cpp` в postinstall пытается скачать cmake и скомпилировать нативный бинарник — в контуре без интернета это упадёт. Флаг `--ignore-scripts` пропускает такие скрипты. Прекомпилированный бинарник уже включён в бандл.
 
-### 5. Собрать проект
+### 4. Собрать проект
 
 ```bash
 pnpm ui:build
 pnpm build
 ```
 
-### 6. Установить глобально
+### 5. Установить глобально
 
 ```bash
 pnpm link --global
@@ -93,14 +75,14 @@ pnpm link --global
 openclaw --version
 ```
 
-### 7. Установить плагины (опционально)
+### 6. Установить плагины (опционально)
 
 ```bash
 openclaw plugins install ~/openclaw-bundle/plugins/openclaw-matrix-*.tgz
 openclaw plugins install ~/openclaw-bundle/plugins/openclaw-voice-call-*.tgz
 ```
 
-### 8. Первичная настройка
+### 7. Первичная настройка
 
 ```bash
 openclaw onboard
@@ -112,7 +94,7 @@ openclaw onboard
 - API-ключ (для локальных моделей может не потребоваться)
 - Каналы связи (Telegram, Slack и т.д.)
 
-### 9. Запуск
+### 8. Запуск
 
 ```bash
 # Установить и запустить daemon
